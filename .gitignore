@@ -1,4 +1,6 @@
-/backend/agent
+/backend/agent/__pycache__
+/backend/agent/.cache
+/backend/agent/.pytest_cache
 
 /backend/startup.sh
 
