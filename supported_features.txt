@@ -1,0 +1,4 @@
+1) Searching for a players' main stats for a specific season
+2) always use  a player's full name  when searching for correctness
+2a) POTENTIAL FIX: add semantic search on a vector database of player's true names with whaterver player_name field the LLM 
+extracts, ensure correctness

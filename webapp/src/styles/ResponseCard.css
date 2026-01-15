@@ -1,0 +1,101 @@
+.responseCardDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 75%;
+    height: 75%;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.profileResponseDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 10px;
+}
+
+.profileImageContainer {
+    cursor: pointer;
+    width: 20%;
+    height: 100%;
+    padding-bottom: 25px;
+}
+
+.tooltip {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    right: 110%;
+    background-color: #4169E1;
+    color: white;
+    width: 140px;
+    height: 50px;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+}
+
+.tooltip::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -8%;
+    border-width: 6px;
+    border-style: solid;
+    border-color: transparent transparent transparent #4169E1;
+}
+
+.profilePicture {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 2px #C0C0C0;
+    object-fit: cover;
+}
+
+.answerDiv {
+    height: 100%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nameDiv {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: flex-start;
+    height: 50%;
+    width: 100%;
+}
+
+.responseDiv {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    height: 50%;
+    width: 100%;
+}
+
+.responseDiv p {
+    margin: 0;
+}
+
+.additionalQueriesDiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chartFormat {
+    width: 90%;
+    height: 100%;
+}

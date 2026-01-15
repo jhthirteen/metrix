@@ -1,0 +1,111 @@
+.nameSection h1, .nameSection p {
+    margin: 5px;
+}
+
+.playerCardDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 75%;
+    height: 75%;
+    border: 2px solid black;
+    border-radius: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.profileDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; 
+    width: 30%;
+    height: 25%;
+    align-items: flex-start;
+}
+
+.playerPicture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 2px solid black;
+    object-fit: cover;
+    transform: translateY(25%);
+}
+
+.accomplishmentsDiv {
+    height: 100%;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+}
+
+.accomplishmentsSubWrapper {
+    height: 75%;
+    display: flex;
+}
+
+.nameSection {
+    height: 25%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+
+.statsSection {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    align-items: flex-start;
+}
+
+.statsGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+}
+
+.statsGridCell {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.awardsSection {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    align-items: flex-start;
+}
+
+.awardsList {
+    margin: 0;
+    list-style-position: outside;
+    padding-left: 20px;
+    text-align: left;
+    overflow-y: auto; /* vertical scroll option */
+    overflow-x: hidden; 
+}
+
+.flipButton {
+    width: 30%;
+    height: 15%;
+    color: white;
+    background-color: black;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.unflippedDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}

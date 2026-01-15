@@ -1,0 +1,8 @@
+/backend/agent
+
+/backend/startup.sh
+
+/metrixenv
+/webapp/node_modules
+/webapp/public
+/webapp/.gitignore
