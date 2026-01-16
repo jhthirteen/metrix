@@ -150,3 +150,13 @@ def get_game_box_score(
         cleaned_data[team_key]['player_stats'].append(player_stats)
     
     return cleaned_data
+
+AggregatedStatsType = Literal['base', 'advanced', 'misc', 'scoring', 'usage', 'defense']
+
+def get_aggregated_player_stats(
+    player_id: Annotated[int, "The id of the player's games to search for"],
+    season: Annotated[str, "The NBA season to search, ex) '2025-26'"],
+    stat_type: Annotated[AggregatedStatsType, "The category of stats to filter by and receive"],
+    last_n_games: Annotated[Optional[int], "For filtering out the last n games"] = None
+) -> str:
+    pass
