@@ -1,13 +1,14 @@
 import autogen
-from agent_config import llm_config
 
 # importing all agents
 from Identity import boot_identity_agent
 from LeagueLeaders import boot_league_leaders_agent
+from BoxScore import boot_box_score_agent
 
 # importing all tools
 from identity_tools import get_player_ids, get_team_ids, get_common_player_info, get_common_team_roster, get_common_team_coaching, search_player_index_history, search_player_index_season, get_common_team_info_season, get_team_history
 from league_leaders_tools import get_all_time_leader, get_team_stat_leader, get_league_standings_season, get_stat_leader_averages_season, get_stat_leader_totals_season
+from box_score_tools import get_player_game_log, get_team_game_log, get_game_box_score
 
 # init and config of tool executor 
 admin_executor = autogen.UserProxyAgent(
@@ -18,6 +19,7 @@ admin_executor = autogen.UserProxyAgent(
 )
 identity_agent = boot_identity_agent()
 league_leaders_agent = boot_league_leaders_agent()
+box_score_agent = boot_box_score_agent()
 
 # register all the identity tools
 autogen.register_function(
@@ -141,6 +143,48 @@ autogen.register_function(
     description="Search for the stat leader totals for a specific season"
 )
 
+# register all the box score tools
+# register all the identity tools
+autogen.register_function(
+    get_player_ids,
+    caller=box_score_agent,
+    executor=admin_executor,
+    name="get_player_ids",
+    description="Search for a players id based on their name."
+)
+
+autogen.register_function(
+    get_team_ids,
+    caller=box_score_agent,
+    executor=admin_executor,
+    name="get_team_ids",
+    description="Search for a teams id based on their name."
+)
+
+autogen.register_function(
+    get_player_game_log,
+    caller=box_score_agent,
+    executor=admin_executor,
+    name="get_player_game_log",
+    description="Get game log for a players based on their id"
+)
+
+autogen.register_function(
+    get_team_game_log,
+    caller=box_score_agent,
+    executor=admin_executor,
+    name="get_team_game_log",
+    description="Get game log for a team based on their id"
+)
+
+autogen.register_function(
+    get_game_box_score,
+    caller=box_score_agent,
+    executor=admin_executor,
+    name="get_game_box_score",
+    description="Get box score stats for a game based on its id"
+)
+
 #workspace = autogen.GroupChat(
     #agents=[admin_executor, identity_agent],
     #messages=[],
@@ -150,6 +194,6 @@ autogen.register_function(
 #manager = autogen.GroupChatManager(groupchat=workspace, llm_config=llm_config)
 
 admin_executor.initiate_chat(
-    league_leaders_agent,
-    message="Who is leading the NBA in points per game this season?"
+    box_score_agent,
+    message="Can you break down Tyrese Maxey's usage stats for his game against on 2026-01-14"
 )
