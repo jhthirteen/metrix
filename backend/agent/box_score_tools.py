@@ -150,7 +150,3 @@ def get_game_box_score(
         cleaned_data[team_key]['player_stats'].append(player_stats)
     
     return cleaned_data
-
-AggregatedStatsType = Literal['base', 'advanced', 'misc', 'scoring', 'usage', 'defense']
-
-AggregatedStatsSearchType = Literal['PerGame', 'Total']

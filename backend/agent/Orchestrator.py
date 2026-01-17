@@ -1,4 +1,5 @@
 import autogen
+from agent_config import llm_config
 
 # importing all agents
 from Identity import boot_identity_agent
@@ -185,15 +186,18 @@ autogen.register_function(
     description="Get box score stats for a game based on its id"
 )
 
-#workspace = autogen.GroupChat(
-    #agents=[admin_executor, identity_agent],
-    #messages=[],
-    #max_round=15
-#)
+workspace = autogen.GroupChat(
+    agents=[admin_executor, identity_agent, league_leaders_agent, box_score_agent],
+    messages=[],
+    max_round=15
+)
 
-#manager = autogen.GroupChatManager(groupchat=workspace, llm_config=llm_config)
+manager = autogen.GroupChatManager(groupchat=workspace, llm_config=llm_config, is_termination_msg=lambda msg: "terminate" in msg["content"].lower())
+
+print('\n\n\n----- Metrix Search -----\n')
+user_query = input('What do you want to search for: ')
 
 admin_executor.initiate_chat(
-    box_score_agent,
-    message="Can you break down Tyrese Maxey's usage stats for his game against on 2026-01-14"
+    manager,
+    message=user_query
 )

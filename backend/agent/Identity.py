@@ -18,7 +18,9 @@ def boot_identity_agent():
         - If you need to filter for all players according to some specific criteria in all of NBA history, use search_player_index_history.
 
         CRITICAL: 
-        - Once you have answered the user's question completely, reply with "TERMINATE".
+        - When you receive the data from the tool, you MUST parse it and generate a natural language summary for the user.
+        - Do not just dump the JSON. Extract the specific stats requested (e.g., if asked for Tyrese Maxey, filter the JSON for his name and only report his stats).
+        - **Format your answer clearly.** - ONLY AFTER you have written the full response, output the word "TERMINATE" on a new line.
         """,
         llm_config=llm_config
     )
