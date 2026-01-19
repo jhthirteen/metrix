@@ -28,6 +28,8 @@ jobs:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+          SUPABASE_ROOT_USER: ${{ secrets.SUPABASE_ROOT_USER }}
+          SUPABASE_ROOT_PW: ${{ secrets.SUPABASE_ROOT_PW }}
         run: |
           python SummaryPipeline.py
           python RedditPipeline.py
